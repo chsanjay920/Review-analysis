@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="card" style="width: 450px">
+    <div class="text-center mt-2" style="font-size: x-large">LOGIN</div>
+    <div class="card-body">
+      <div class="form-group mx-3 my-1">
+        <div class="mt-1 mx-4" >
+          <small for="username">username</small>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder=""
+            style="padding: 5px; margin-top: 3px; font-size: small"
+          />
+        </div>
+        <div class="mt-1 mx-4" >
+          <small for="password">password</small>
+          <input
+            type="text"
+            class="form-control"
+            id="password"
+            placeholder=""
+            style="padding: 5px; margin-top: 3px; font-size: small"
+          />
+        </div>
+        <div class="m-1 mt-3">
+          <button
+            type="submit"
+            class="btn btn-primary mt-2"
+            style="width: 100%"
+          >
+            login
+          </button>
+        </div>
+        <div class="m-1 mt-1">
+            <button
+              type="button"
+              class="btn btn-secondary mt-2"
+              style="width: 100%"
+              [routerLink]="['login']"
+            >
+              Register
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

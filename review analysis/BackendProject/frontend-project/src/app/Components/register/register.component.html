@@ -1,0 +1,69 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 450px">
+      <div class="text-center mt-3" style="font-size: x-large">REGISTER</div>
+      <div class="card-body">
+        <div class="form-group mx-3 my-1">
+          <div class="mt-1 mx-4" >
+            <small for="username">User Name</small>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="@ramesh01"
+              style="padding: 5px; margin-top: 3px; font-size: small"
+            />
+          </div>
+          <div class="mt-1 mx-4" >
+            <small for="emailID">Email id</small>
+            <input
+              type="email"
+              class="form-control"
+              id="emailID"
+              placeholder="abc@gmail.com"
+              style="padding: 5px; margin-top: 3px; font-size: small"
+            />
+          </div>
+          <div class="mt-1 mx-4" >
+            <small for="createpassword">Create Password</small>
+            <input
+              type="text"
+              class="form-control"
+              id="createpassword"
+              placeholder="****"
+              style="padding: 5px; margin-top: 3px; font-size: small"
+            />
+          </div>
+          <div class="mt-1 mx-4" >
+            <small for="password">Re-enter Password</small>
+            <input
+              type="text"
+              class="form-control"
+              id="password"
+              placeholder="****"
+              style="padding: 5px; margin-top: 3px; font-size: small"
+            />
+          </div>
+          <div class="m-1 mt-3">
+            <button
+              type="submit"
+              class="btn btn-primary mt-2"
+              style="width: 100%"
+            >
+              Register
+            </button>
+          </div>
+          <div class="m-1 mt-1">
+              <button
+                type="button"
+                class="btn btn-secondary mt-2"
+                style="width: 100%"
+                [routerLink]="['register']"
+              >
+                Login
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

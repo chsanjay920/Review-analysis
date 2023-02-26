@@ -1,0 +1,528 @@
+<div class="container">
+  <div class="row">
+    <div class="container m-1" id="subDiv">
+      <div class="d-flex justify-content-center">
+        <div class="mx-5 mt-5">
+          <div class="mx-4">
+            <div class="title mt-3">Posting New Idea</div>
+            <div class="time">12:15 PM. 16th January 2022</div>
+          </div>
+          <div class="container mt-3" id="sub-nav">
+            <button
+              class="btn btn-primary"
+              id="btn-nav"
+              name="group"
+              (click)="DivChange('movies')"
+            >
+              movies
+            </button>
+            <button
+              class="btn btn-primary"
+              id="btn-nav"
+              (click)="DivChange('food')"
+            >
+              food
+            </button>
+            <button
+              class="btn btn-primary"
+              id="btn-nav"
+              (click)="DivChange('technology')"
+            >
+              technology
+            </button>
+            <button
+              class="btn btn-primary"
+              id="btn-nav"
+              (click)="DivChange('startupideas')"
+            >
+              startup ideas
+            </button>
+            <button
+              class="btn btn-primary"
+              id="btn-nav"
+              (click)="DivChange('universities')"
+            >
+              universities
+            </button>
+            <button
+              class="btn btn-primary"
+              id="btn-nav"
+              (click)="DivChange('politics')"
+            >
+              politics
+            </button>
+            <button
+              class="btn btn-primary"
+              id="btn-nav"
+              (click)="DivChange('generalproblems')"
+            >
+              general problems
+            </button>
+          </div>
+        </div>
+        <div class="mx-5 mt-5">
+          <div class="d-flex justify-content-center" id="GroupSection">
+            <div class="" *ngIf="Sections.movies">
+              <div class="card" style="width: 450px">
+                <div class="text-center mt-2" style="font-size: large">
+                  Add movies related post
+                </div>
+                <div class="card-body">
+                  <div class="form-group mx-3 my-1">
+                    <div>
+                      <div class="form-floating mt-1">
+                        <textarea
+                          rows="2"
+                          style="height: 100%"
+                          id="title"
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="moviename"
+                        ></textarea>
+                        <label for="moviename">Enter movie name</label>
+                      </div>
+                    </div>
+                    <div class="mt-1">
+                      <div class="form-floating mt-1">
+                        <textarea
+                          rows="7"
+                          style="height: 100%"
+                          id="Description"
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="Description"
+                        ></textarea>
+                        <label for="Description">Enter story</label>
+                      </div>
+                    </div>
+                    <div class="form-floating mt-1">
+                      <textarea
+                        rows="1"
+                        style="height: 100%"
+                        id="cast"
+                        class="form-control"
+                        placeholder="Leave a comment here"
+                        id="cast"
+                      ></textarea>
+                      <label for="cast">cast / crew</label>
+                    </div>
+                    <div class="form-floating mt-1">
+                      <textarea
+                        rows="1"
+                        style="height: 100%"
+                        id="cast"
+                        class="form-control"
+                        placeholder="Leave a comment here"
+                        id="budget"
+                      ></textarea>
+                      <label for="budget">budget details</label>
+                    </div>
+                    <div class="m-1">
+                      <button
+                        type="submit"
+                        class="btn btn-primary mt-2"
+                        style="width: 100%"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="" *ngIf="Sections.food">
+              <div class="card" style="width: 450px">
+                <div class="text-center mt-2" style="font-size: large">
+                  Add food related post
+                </div>
+                <div class="card-body">
+                  <div class="form-group mx-3 my-1">
+                    <div>
+                      <div class="form-floating mt-1">
+                        <input
+                          type="text"
+                          style="height: 100%"
+                          id="title"
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="restaurentname"
+                        />
+                        <label for="restaurentname"
+                          >Enter restaurent name</label
+                        >
+                      </div>
+                    </div>
+                    <div class="mt-2">
+                      <div class="form-floating mt-1">
+                        <textarea
+                          rows="7"
+                          style="height: 100%"
+                          id="Description"
+                          class="form-control"
+                          placeholder="Leave a comment here"
+                          id="Description"
+                        ></textarea>
+                        <label for="Description">Enter Description</label>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                      <div class="form-check mx-3">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          value="veg"
+                          id="flexCheckDefault"
+                          name="foodtype"
+                        />
+                        <label class="form-check-label" for="flexCheckDefault">
+                          veg
+                        </label>
+                      </div>
+                      <div class="form-check mx-3">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          value="nonveg"
+                          id="flexCheckChecked"
+                          name="foodtype"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          non veg
+                        </label>
+                      </div>
+                      <div class="form-check mx-3">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          value="both"
+                          id="flexCheckChecked"
+                          name="foodtype"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          both
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-floating mt-1">
+                      <input
+                        id="cast"
+                        class="form-control"
+                        placeholder="State or city"
+                        id="location"
+                      />
+                      <label for="location">location details</label>
+                    </div>
+                    <div class="m-1">
+                      <button
+                        type="submit"
+                        class="btn btn-primary mt-2"
+                        style="width: 100%"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="" *ngIf="Sections.technology">
+                <div class="card" style="width: 450px">
+                    <div class="text-center mt-2" style="font-size: large">
+                      Add gadget related post
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group mx-3 my-1">
+                        <div>
+                          <div class="form-floating mt-1">
+                            <input
+                              id="title"
+                              class="form-control"
+                              placeholder="asd"
+                              id="gadgetname"
+                            >
+                            <label for="gadgetname">Enter gadget name</label>
+                          </div>
+                        </div>
+                        <div class="mt-1">
+                          <div class="form-floating mt-1">
+                            <textarea
+                              rows="7"
+                              style="height: 100%"
+                              id="Description"
+                              class="form-control"
+                              placeholder="Leave a comment here"
+                              id="Description"
+                            ></textarea>
+                            <label for="Description">Enter Description</label>
+                          </div>
+                        </div>
+                        <div class="form-floating mt-1">
+                          <input
+                            id="date"
+                            class="form-control"
+                            type="date"
+                          >
+                          <label for="cast">launch date</label>
+                        </div>
+                        <div class="form-floating mt-1">
+                          <input
+                            id="cast"
+                            class="form-control"
+                            placeholder="Leave a comment here"
+                            type="number"
+                            id="prize"
+                          >
+                          <label for="prize">prize</label>
+                        </div>
+                        <div class="m-1">
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-2"
+                            style="width: 100%"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="" *ngIf="Sections.startupideas">
+                <div class="card" style="width: 450px">
+                    <div class="text-center mt-2" style="font-size: large">
+                      Add startup idea related post
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group mx-3 my-1">
+                        <div>
+                          <div class="form-floating mt-1">
+                            <input
+                              id="title"
+                              class="form-control"
+                              placeholder="asd"
+                              id="gadgetname"
+                            >
+                            <label for="gadgetname">Enter startup idea title</label>
+                          </div>
+                        </div>
+                        <div class="mt-1">
+                          <div class="form-floating mt-1">
+                            <textarea
+                              rows="7"
+                              style="height: 100%"
+                              id="Description"
+                              class="form-control"
+                              placeholder="Leave a comment here"
+                              id="Description"
+                            ></textarea>
+                            <label for="Description">Enter Description of idea</label>
+                          </div>
+                        </div>
+                        <div class="form-floating mt-1">
+                          <input
+                            id="cast"
+                            class="form-control"
+                            type="number"
+                            name="cast"
+                            placeholder="asd"
+                          >
+                          <label for="cast">investment amount</label>
+                        </div>
+                        <div class="form-floating mt-1">
+                          <input
+                            class="form-control"
+                            placeholder="Leave a comment here"
+                            type="text"
+                            id="location"
+                          >
+                          <label for="location">location</label>
+                        </div>
+                        <div class="m-1">
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-2"
+                            style="width: 100%"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="" *ngIf="Sections.universities">
+                <div class="card" style="width: 450px">
+                    <div class="text-center mt-2" style="font-size: large">
+                      Add startup idea related post
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group mx-3 my-1">
+                        <div>
+                          <div class="form-floating mt-1">
+                            <input
+                              id="title"
+                              class="form-control"
+                              placeholder="asd"
+                              id="universityname"
+                            >
+                            <label for="universityname">Enter college name</label>
+                          </div>
+                        </div>
+                        <div class="mt-1">
+                          <div class="form-floating mt-1">
+                            <textarea
+                              rows="7"
+                              style="height: 100%"
+                              id="Description"
+                              class="form-control"
+                              placeholder="Leave a comment here"
+                              id="Description"
+                            ></textarea>
+                            <label for="Description">Enter Description of idea</label>
+                          </div>
+                        </div>
+                        <div class="form-floating mt-1">
+                          <input
+                            id="fee"
+                            class="form-control"
+                            type="number"
+                            name="fee"
+                            placeholder="asd"
+                          >
+                          <label for="fee">Average Fee</label>
+                        </div>
+                        <div class="form-floating mt-1">
+                          <input
+                            class="form-control"
+                            placeholder="Leave a comment here"
+                            type="date"
+                            id="year"
+                          >
+                          <label for="year">established year</label>
+                        </div>
+                        <div class="form-floating mt-1">
+                            <input
+                              class="form-control"
+                              placeholder="Leave a comment here"
+                              type="text"
+                              id="location"
+                            >
+                            <label for="location">location</label>
+                          </div>
+                        <div class="m-1">
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-2"
+                            style="width: 100%"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="" *ngIf="Sections.politics">
+                <div class="card" style="width: 450px">
+                    <div class="text-center mt-2" style="font-size: large">
+                      Add politics related post
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group mx-3 my-1">
+                        <div>
+                          <div class="form-floating mt-1">
+                            <input
+                              id="title"
+                              class="form-control"
+                              placeholder="asd"
+                              id="gadgetname"
+                            >
+                            <label for="gadgetname">Enter politics idea title</label>
+                          </div>
+                        </div>
+                        <div class="mt-1">
+                          <div class="form-floating mt-1">
+                            <textarea
+                              rows="7"
+                              style="height: 100%"
+                              id="Description"
+                              class="form-control"
+                              placeholder="Leave a comment here"
+                              id="Description"
+                            ></textarea>
+                            <label for="Description">Enter Description of idea</label>
+                          </div>
+                        </div>
+                        <div class="m-1">
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-2"
+                            style="width: 100%"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="" *ngIf="Sections.generalproblems">
+                <div class="card" style="width: 450px">
+                    <div class="text-center mt-2" style="font-size: large">
+                      Add general problems post
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group mx-3 my-1">
+                        <div>
+                          <div class="form-floating mt-1">
+                            <input
+                              id="title"
+                              class="form-control"
+                              placeholder="asd"
+                              type="text"
+                            >
+                            <label for="title">Enter general problem subject</label>
+                          </div>
+                        </div>
+                        <div class="mt-1">
+                          <div class="form-floating mt-1">
+                            <textarea
+                              rows="7"
+                              style="height: 100%"
+                              id="Description"
+                              class="form-control"
+                              placeholder="Leave a comment here"
+                              id="Description"
+                            ></textarea>
+                            <label for="Description">Brief Description</label>
+                          </div>
+                        </div>
+                        <div class="form-floating mt-1">
+                          <input
+                            class="form-control"
+                            placeholder="Leave a comment here"
+                            type="text"
+                            id="location"
+                          >
+                          <label for="location">location</label>
+                        </div>
+                        <div class="m-1">
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-2"
+                            style="width: 100%"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

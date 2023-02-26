@@ -1,0 +1,6 @@
+
+dotnet publish --configuration Release --output ../_Release 
+
+dotnet build
+
+dotnet run
