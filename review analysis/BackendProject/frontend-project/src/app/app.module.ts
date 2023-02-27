@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { Client } from './APIs';
 const routes: Routes = [
   {path:'',component:IdeasfeedComponent},
   {path:'ideas',component:IdeasfeedComponent},
@@ -33,11 +35,13 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [Client],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

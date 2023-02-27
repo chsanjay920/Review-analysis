@@ -1,26 +1,88 @@
 <div class="list-group" id="feedComponent">
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small>3 days ago</small>
-      </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small>And some small print.</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small class="text-muted">And some muted small print.</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small class="text-muted">And some muted small print.</small>
-    </a>
+  <div class="content" *ngFor="let data of FeedData">
+     <div class="food" *ngIf="data.queryCategory == TypeModel.food">  
+      <button class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{data.restaurant}}</h5>
+          <small>{{data.queryUploadedAt.toLocaleString()}}</small>
+        </div>
+        <p class="mb-1">Description : {{data.foodDescription}}</p>
+        <small>Food Type : {{data.foodType}}</small><br>
+        <small>Location : {{data.restaurantLocation}}</small>
+        <small>{{data.queryCategory}}</small>
+      </button>
+    </div>
+    <div class="movies" *ngIf="data.queryCategory == TypeModel.movies"> 
+      <button href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{data.moviename}}</h5>
+          <small>{{data.queryUploadedAt.toLocaleString()}}</small>
+        </div>
+        <p class="mb-1">movieStory : {{data.movieStory}}</p>
+        <small>Budget : {{data.movieBudget}}</small><br>
+        <small>Category : {{data.queryCategory}}</small>
+      </button>
+    </div>
+    <div class="technology" *ngIf="data.queryCategory == TypeModel.technology"> 
+      <button href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{data.technologyName}}</h5>
+          <small>{{data.queryUploadedAt.toLocaleString()}}</small>
+        </div>
+        <p class="mb-1">{{data.technologyDescription}}</p>
+        <small>Launch date : {{data.launchDate.getFullYear()}}</small><br>
+        <small>Category : {{data.queryCategory}}</small>
+      </button>
+    </div> 
+    <div class="politics" *ngIf="data.queryCategory == TypeModel.politics"> 
+      <button href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Politician Name : {{data.politicianName}}</h5>
+          <small>{{data.queryUploadedAt.toLocaleString()}}</small>
+        </div>
+        <p class="mb-1">description : {{data.politicalDescription}}</p>
+        <small>Political Party : {{data.politicalParty}}</small>
+        <small class="mx-3">Politition Age : {{data.politicianAge}}</small><br>
+        <small>Politician Qualification : {{data.politicianQualification}}</small><br>
+        <small>Category : {{data.queryCategory}}</small>
+      </button>
+    </div>
+    <div class="startups" *ngIf="data.queryCategory == TypeModel.startups"> 
+      <button href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">StartUp Idea : {{data.startUpTitle}}</h5>
+          <small>{{data.queryUploadedAt.toLocaleString()}}</small>
+        </div>
+        <p class="mb-1">description : {{data.startUpdescription}}</p>
+        <small>StartUp location : {{data.startUplocation}}</small><br>
+        <small>Category : {{data.queryCategory}}</small>
+      </button>
+    </div>
+    <div class="generalproblems" *ngIf="data.queryCategory == TypeModel.generalproblem"> 
+      <button href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">General : {{data.generalProblemSubject}}</h5>
+          <small>{{data.queryUploadedAt.toLocaleString()}}</small>
+        </div>
+        <p class="mb-1">Description : {{data.generalProblemDescription}}</p>
+        <small>Category : {{data.queryCategory}}</small><br>
+        <small>Location : {{data.generalProblemlocation}}</small>
+      </button>
+    </div>
+
+    <div class="university" *ngIf="data.queryCategory == TypeModel.universities"> 
+      <button href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">University Name : {{data.universityname}}</h5>
+          <small>{{data.queryUploadedAt.toLocaleString()}}</small>
+        </div>
+        <p class="mb-1">Description : {{data.universityDescription}}</p>
+        <small>Course Offered : {{data.courseOffered}}</small>
+        <small class="mx-4">Average fee : {{data.universityFee}}</small><br>
+        <small>Universities Location : {{data.universitiesLocation}}</small>
+        <small class="mx-4">Established Year : {{data.establishedYear.getFullYear()}}</small><br>
+        <small>Category : {{data.queryCategory}}</small>
+      </button>
+    </div>
   </div>
+</div>
