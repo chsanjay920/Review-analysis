@@ -1,5 +1,35 @@
-#feedComponent{
-    margin: 50px 200px;
-    height: 800px;
-    border: 1px solid rgb(198, 197, 197);
+#feedComponent {
+  margin: 50px 200px;
+  height: 800px;
+  border: 1px solid rgb(198, 197, 197);
+}
+.sort-by {
+  display: flex;
+  align-items: center;
+}
+
+.sort-by label {
+  margin-right: 10px;
+}
+
+.sort-by select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+    width: 200px;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.sort-by select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.sort-by option {
+  font-size: 16px;
 }
