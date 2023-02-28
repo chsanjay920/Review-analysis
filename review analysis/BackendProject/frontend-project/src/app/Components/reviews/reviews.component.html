@@ -1,0 +1,204 @@
+<div class="d-flex flex-column" *ngIf="SelectedData != null">
+  <div class="d-flex justify-content-center">
+    <div class="Query mt-5" style="width: 70vw">
+      <div class="food" *ngIf="SelectedData.queryCategory == TypeModel.food">
+        <button class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ SelectedData.restaurant }}</h5>
+            <button class="btn btn-outline-primary" (click)="toggleForm()">
+              Add review
+            </button>
+          </div>
+          <p class="mb-1">Description : {{ SelectedData.foodDescription }}</p>
+          <small>Food Type : {{ SelectedData.foodType }}</small
+          ><br />
+          <small>Location : {{ SelectedData.restaurantLocation }}</small>
+          <small>{{ SelectedData.queryCategory }}</small>
+        </button>
+      </div>
+      <div
+        class="movies"
+        *ngIf="SelectedData.queryCategory == TypeModel.movies"
+      >
+        <button href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ SelectedData.moviename }}</h5>
+            <button class="btn btn-outline-primary" (click)="toggleForm()">
+              Add review
+            </button>
+          </div>
+          <p class="mb-1">movieStory : {{ SelectedData.movieStory }}</p>
+          <small>Budget : {{ SelectedData.movieBudget }}</small
+          ><br />
+          <small>Category : {{ SelectedData.queryCategory }}</small>
+        </button>
+      </div>
+      <div
+        class="technology"
+        *ngIf="SelectedData.queryCategory == TypeModel.technology"
+      >
+        <button href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ SelectedData.technologyName }}</h5>
+            <button class="btn btn-outline-primary" (click)="toggleForm()">
+              Add review
+            </button>
+          </div>
+          <p class="mb-1">{{ SelectedData.technologyDescription }}</p>
+          <small
+            >Launch date : {{ SelectedData.launchDate.getFullYear() }}</small
+          ><br />
+          <small>Category : {{ SelectedData.queryCategory }}</small>
+        </button>
+      </div>
+      <div
+        class="politics"
+        *ngIf="SelectedData.queryCategory == TypeModel.politics"
+      >
+        <button href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+              Politician Name : {{ SelectedData.politicianName }}
+            </h5>
+            <button class="btn btn-outline-primary" (click)="toggleForm()">
+              Add review
+            </button>
+          </div>
+          <p class="mb-1">
+            description : {{ SelectedData.politicalDescription }}
+          </p>
+          <small>Political Party : {{ SelectedData.politicalParty }}</small>
+          <small class="mx-3"
+            >Politition Age : {{ SelectedData.politicianAge }}</small
+          ><br />
+          <small
+            >Politician Qualification :
+            {{ SelectedData.politicianQualification }}</small
+          ><br />
+          <small>Category : {{ SelectedData.queryCategory }}</small>
+        </button>
+      </div>
+      <div
+        class="startups"
+        *ngIf="SelectedData.queryCategory == TypeModel.startups"
+      >
+        <button href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">StartUp Idea : {{ SelectedData.startUpTitle }}</h5>
+            <button class="btn btn-outline-primary" (click)="toggleForm()">
+              Add review
+            </button>
+          </div>
+          <p class="mb-1">
+            description : {{ SelectedData.startUpdescription }}
+          </p>
+          <small>StartUp location : {{ SelectedData.startUplocation }}</small
+          ><br />
+          <small>Category : {{ SelectedData.queryCategory }}</small>
+        </button>
+      </div>
+      <div
+        class="generalproblems"
+        *ngIf="SelectedData.queryCategory == TypeModel.generalproblem"
+      >
+        <button href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+              General : {{ SelectedData.generalProblemSubject }}
+            </h5>
+            <button class="btn btn-outline-primary" (click)="toggleForm()">
+              Add review
+            </button>
+          </div>
+          <p class="mb-1">
+            Description : {{ SelectedData.generalProblemDescription }}
+          </p>
+          <small>Category : {{ SelectedData.queryCategory }}</small
+          ><br />
+          <small>Location : {{ SelectedData.generalProblemlocation }}</small>
+        </button>
+      </div>
+      <div
+        class="university"
+        *ngIf="SelectedData.queryCategory == TypeModel.universities"
+      >
+        <button href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">
+              University Name : {{ SelectedData.universityname }}
+            </h5>
+            <button class="btn btn-outline-primary" (click)="toggleForm()">
+              Add review
+            </button>
+          </div>
+          <p class="mb-1">
+            Description : {{ SelectedData.universityDescription }}
+          </p>
+          <small>Course Offered : {{ SelectedData.courseOffered }}</small>
+          <small class="mx-4"
+            >Average fee : {{ SelectedData.universityFee }}</small
+          ><br />
+          <small
+            >Universities Location :
+            {{ SelectedData.universitiesLocation }}</small
+          >
+          <small class="mx-4"
+            >Established Year :
+            {{ SelectedData.establishedYear.getFullYear() }}</small
+          ><br />
+          <small>Category : {{ SelectedData.queryCategory }}</small>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="ReviewForm mt-5" *ngIf="ShowForm" style="width: 60vw">
+      <div class="form">
+        <div class="card">
+          <div class="card-header">Add New Review</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              The Query Analysis is made based on the reviews
+            </h5>
+            <p class="card-text">
+              Please provide a valid information. don't spam reviews.
+            </p>
+            <form [formGroup]="reviewsForm">
+                <div class="form-outline">
+                    <textarea
+                    rows="7"
+                    style="height: 100%"
+                    class="form-control"
+                    placeholder="Leave a review here"
+                    id="review"
+                    formControlName="review"
+                    name="review"
+                  ></textarea>
+                </div>
+              <button class="btn btn-primary mt-3" (click)="SubmitReview()">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="reviewsList row m-5" style="width: 60vw" *ngIf="ShowReviews">
+      <div class="d-flex justify-content-between mb-3">
+        <div class="h4">All Reviews:</div>
+        <button class="btn btn-outline-primary">Analysis Reviews</button>
+      </div>
+      <hr />
+      <div class="list">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let data of ListOfReviews;let i = index">Review {{i+1}} :  {{data.review}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="noreviewsList">
+        <div class="d-flex justify-content-center mb-3" *ngIf="!ShowReviews">
+            <div class="h4">No Reviews Found</div>
+        </div>
+    </div>
+  </div>
+</div>

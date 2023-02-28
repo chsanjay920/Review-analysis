@@ -16,5 +16,7 @@ namespace BackendProject.DbContexts
         public DbSet<StartupIdeas> startupIdeas  { get; set; }
         public DbSet<Technology> technology { get; set; }
         public DbSet<Universities> universities { get; set;}
+
+        public DbSet<ReviewsData> reviews { get; set; }
     }
 }

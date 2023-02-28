@@ -1,7 +1,7 @@
 <div class="list-group" id="feedComponent">
   <div class="content" *ngFor="let data of FeedData">
      <div class="food" *ngIf="data.queryCategory == TypeModel.food">  
-      <button class="list-group-item list-group-item-action">
+      <button class="list-group-item list-group-item-action" (click)="selectData(data)">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">{{data.restaurant}}</h5>
           <small>{{data.queryUploadedAt.toLocaleString()}}</small>
@@ -13,7 +13,7 @@
       </button>
     </div>
     <div class="movies" *ngIf="data.queryCategory == TypeModel.movies"> 
-      <button href="#" class="list-group-item list-group-item-action">
+      <button href="#" class="list-group-item list-group-item-action" (click)="selectData(data)">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">{{data.moviename}}</h5>
           <small>{{data.queryUploadedAt.toLocaleString()}}</small>
@@ -24,7 +24,7 @@
       </button>
     </div>
     <div class="technology" *ngIf="data.queryCategory == TypeModel.technology"> 
-      <button href="#" class="list-group-item list-group-item-action">
+      <button href="#" class="list-group-item list-group-item-action" (click)="selectData(data)">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">{{data.technologyName}}</h5>
           <small>{{data.queryUploadedAt.toLocaleString()}}</small>
@@ -35,7 +35,7 @@
       </button>
     </div> 
     <div class="politics" *ngIf="data.queryCategory == TypeModel.politics"> 
-      <button href="#" class="list-group-item list-group-item-action">
+      <button href="#" class="list-group-item list-group-item-action" (click)="selectData(data)">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">Politician Name : {{data.politicianName}}</h5>
           <small>{{data.queryUploadedAt.toLocaleString()}}</small>
@@ -48,7 +48,7 @@
       </button>
     </div>
     <div class="startups" *ngIf="data.queryCategory == TypeModel.startups"> 
-      <button href="#" class="list-group-item list-group-item-action">
+      <button href="#" class="list-group-item list-group-item-action" (click)="selectData(data)">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">StartUp Idea : {{data.startUpTitle}}</h5>
           <small>{{data.queryUploadedAt.toLocaleString()}}</small>
@@ -59,7 +59,7 @@
       </button>
     </div>
     <div class="generalproblems" *ngIf="data.queryCategory == TypeModel.generalproblem"> 
-      <button href="#" class="list-group-item list-group-item-action">
+      <button href="#" class="list-group-item list-group-item-action" (click)="selectData(data)">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">General : {{data.generalProblemSubject}}</h5>
           <small>{{data.queryUploadedAt.toLocaleString()}}</small>
@@ -69,9 +69,8 @@
         <small>Location : {{data.generalProblemlocation}}</small>
       </button>
     </div>
-
     <div class="university" *ngIf="data.queryCategory == TypeModel.universities"> 
-      <button href="#" class="list-group-item list-group-item-action">
+      <button href="#" class="list-group-item list-group-item-action" (click)="selectData(data)">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">University Name : {{data.universityname}}</h5>
           <small>{{data.queryUploadedAt.toLocaleString()}}</small>

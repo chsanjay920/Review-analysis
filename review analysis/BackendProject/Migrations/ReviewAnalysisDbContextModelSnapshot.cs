@@ -158,6 +158,26 @@ namespace BackendProject.Migrations
                     b.ToTable("politics");
                 });
 
+            modelBuilder.Entity("BackendProject.Models.ReviewsData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("QueryID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("review")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("reviews");
+                });
+
             modelBuilder.Entity("BackendProject.Models.StartupIdeas", b =>
                 {
                     b.Property<int>("Id")

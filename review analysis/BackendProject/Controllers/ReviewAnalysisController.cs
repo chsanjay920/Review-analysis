@@ -18,6 +18,7 @@ namespace BackendProject.Controllers
         ITechnologyService technologyService;
         IUniversityService universityService;
         IFeedService FeedService;
+        IReviewsServices reviewsServices;
 
         public ReviewAnalysisController(
         IFoodService foodService,
@@ -27,7 +28,8 @@ namespace BackendProject.Controllers
         IStartUpService startUpService,
         ITechnologyService technologyService,
         IUniversityService universityService,
-        IFeedService feedService)
+        IFeedService feedService,
+        IReviewsServices reviewsServices)
         {
             this.foodService = foodService;
             this.foodService = foodService;
@@ -38,6 +40,7 @@ namespace BackendProject.Controllers
             this.technologyService = technologyService;
             this.universityService = universityService;
             this.FeedService = feedService;
+            this.reviewsServices = reviewsServices;
         }
 
         [HttpGet("GetFoodIdeas")]
@@ -129,6 +132,19 @@ namespace BackendProject.Controllers
         public List<FeedData> GetFeedData()
         {
             return this.FeedService.GetAllQueries();
+        }
+
+        [HttpPost("AddReview")]
+        public IActionResult AddReview(ReviewsData reviewsData)
+        {
+            this.reviewsServices.AddReview(reviewsData);
+            return Ok();
+        }
+
+        [HttpGet("GetReviews")]
+        public List<ReviewsData> GetReviewsData(Guid guid)
+        {
+            return this.reviewsServices.GetReviews(guid);
         }
 
     }

@@ -33,6 +33,7 @@ builder.Services.AddTransient<IStartUpService,StartUpService>();
 builder.Services.AddTransient<ITechnologyService,TechnologyService>();
 builder.Services.AddTransient<IUniversityService,UniversityService>();
 builder.Services.AddTransient<IFeedService,FeedService>();
+builder.Services.AddTransient<IReviewsServices,ReviewsServices>();
 
 // Configuring ASP.NET Core to Serve Angular Files
 builder.Services.AddSpaStaticFiles(configuration =>

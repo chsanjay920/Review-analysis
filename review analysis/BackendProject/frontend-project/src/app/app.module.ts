@@ -13,13 +13,15 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { Client } from './APIs';
+import { ReviewsComponent } from './Components/reviews/reviews.component';
 const routes: Routes = [
   {path:'',component:IdeasfeedComponent},
   {path:'ideas',component:IdeasfeedComponent},
   {path:'addideas',component:AddideasComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'profile',component:ProfileComponent}
+  {path:'profile',component:ProfileComponent},
+  {path:'reviews',component:ReviewsComponent}
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const routes: Routes = [
     AddideasComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
