@@ -1,5 +1,14 @@
 <div class="d-flex justify-content-center mt-3">
   <div class="d-flex justify-content-end" style="width: 80vw">
+    <input
+          class="form-control mx-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          style="width: 200px;"
+          [(ngModel)]="searchTerm"
+          (input)="filterItems()"
+        />
     <div class="sort-by">
       <select id="sort-by-select" (change)="onSortByChange($event.target)">
         <option value="" disabled selected>Sort By:</option>

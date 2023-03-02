@@ -14,6 +14,7 @@ export class ReviewsComponent implements OnInit {
   public ListOfReviews: any = [];
   public ShowForm: boolean = false;
   public ShowReviews: boolean = false;
+  public showanalysis: boolean = false;
   public queryId: any = '';
   constructor(
     private sharedService: SharedService,
@@ -64,6 +65,10 @@ export class ReviewsComponent implements OnInit {
       .getReviews(this.SelectedData.queryId)
       .subscribe((List) => {
         this.ListOfReviews = List;
+        console.log(List);
       });
+  }
+  ShowAnalysis(){
+    this.showanalysis =!this.showanalysis;
   }
 }

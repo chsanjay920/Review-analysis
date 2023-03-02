@@ -186,12 +186,20 @@
     <div class="reviewsList row m-5" style="width: 60vw" *ngIf="ShowReviews">
       <div class="d-flex justify-content-between mb-3">
         <div class="h4">All Reviews:</div>
-        <button class="btn btn-outline-primary">Analysis Reviews</button>
+        <button class="btn btn-outline-primary" (click)="ShowAnalysis()">Analysis Reviews</button>
       </div>
       <hr />
       <div class="list">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" *ngFor="let data of ListOfReviews;let i = index">Review {{i+1}} :  {{data.review}}</li>
+          <div *ngFor="let data of ListOfReviews;let i = index" >
+            <li class="list-group-item" [class.list-group-item-info]="showanalysis && data.prediction=='True'" [class.list-group-item-danger]="showanalysis && data.prediction=='False'">
+                <div class="mb-0">Review {{i+1}} :  {{data.review}}</div>
+                <div class="prediction" *ngIf="showanalysis">
+                  <small style="margin: 0px;" >Review Prediction : {{data.prediction=="True"?"Positive":"Negitive"}}</small><br>
+                  <small>Prediction Score : {{data.predictionScore}}</small>
+                </div>
+            </li>
+          </div>
         </ul>
       </div>
     </div>

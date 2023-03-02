@@ -2,6 +2,8 @@
 using BackendProject.interfaces;
 using BackendProject.Models;
 using System.Diagnostics;
+using SentimentAnalyzer;
+
 
 namespace BackendProject.Services
 {
@@ -13,6 +15,9 @@ namespace BackendProject.Services
         }
         public void AddReview(ReviewsData reviewdata)
         {
+            var sentiment = Sentiments.Predict(reviewdata.review);
+            reviewdata.Prediction = sentiment.Prediction.ToString();
+            reviewdata.PredictionScore = sentiment.Score;
             this.database.reviews.Add(reviewdata);
             this.database.SaveChanges();
         }

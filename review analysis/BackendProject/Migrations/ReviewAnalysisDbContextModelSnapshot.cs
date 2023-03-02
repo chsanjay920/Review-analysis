@@ -166,6 +166,12 @@ namespace BackendProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Prediction")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("PredictionScore")
+                        .HasColumnType("real");
+
                     b.Property<Guid>("QueryID")
                         .HasColumnType("uniqueidentifier");
 
