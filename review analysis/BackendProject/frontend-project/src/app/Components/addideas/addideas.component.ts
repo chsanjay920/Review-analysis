@@ -84,9 +84,10 @@ export class AddideasComponent implements OnInit {
       cast:formdata.moviecast||'',
       budget:Number(formdata.budget)||0,
     }
-    this.formdataservice.addMoviesIdeas(new Movies(movies)).subscribe(Response=>{
+    this.formdataservice.addMoviesIdeas(new Movies(movies)).subscribe(Response => {
       console.log(Response);
     });
+    this.moviesForm.reset();
   }
   AddFood()
   {

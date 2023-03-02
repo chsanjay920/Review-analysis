@@ -57,6 +57,7 @@ export class ReviewsComponent implements OnInit {
       .subscribe((Response) => {
         console.log(Response);
       });
+    this.reviewsForm.reset();
   }
 
   GetReviews() {
